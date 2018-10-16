@@ -26,8 +26,11 @@ public class alumno {
 	private String fchregistro;
 	private String estado;
 	
-	@OneToMany(mappedBy="alumno")
+	@OneToMany(mappedBy = "alumno")
 	private List<apoderado> apoderado;
+	
+	@OneToMany(mappedBy = "alumno")
+	private List<matricula> matricula;
 	
 	public alumno() {
 		super();
@@ -114,6 +117,7 @@ public class alumno {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+		
 	}
 	public List<apoderado> getApoderado() {
 		return apoderado;
@@ -122,7 +126,12 @@ public class alumno {
 		this.apoderado = apoderado;
 	}
 	
-	
+	public List<matricula> getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(List<matricula> matricula) {
+		this.matricula = matricula;
+	}
 	
 	
 	
